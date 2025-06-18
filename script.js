@@ -1,8 +1,20 @@
 let contain = document.querySelector('.container');
+let search = document.getElementById('search-box')
+let submitBtn = document.querySelector('.submit-btn')
+
 fetch('https://fakestoreapi.com/products')
 .then(Response => Response.json())
 .then((data)=>{ 
-    data.map((value)=>{
+    productList(data)
+
+    submitBtn.addEventListener('click',() => {
+        let filter = data.filter((x) => x.price >= search.value )
+        search.value = ''
+        contain.innerHTML = ''
+        productList(filter)
+    })
+    function productList(products){
+         products.map((value)=>{
 
         let element = document.createElement('div')
         element.classList.add('elements')
@@ -34,12 +46,13 @@ fetch('https://fakestoreapi.com/products')
 
         element.appendChild(ids)
         element.appendChild(titles)
+        element.appendChild(images)
         element.appendChild(prices)
         element.appendChild(descriptions)
-        element.appendChild(images)
         element.appendChild(ratings)
 
         contain.appendChild(element)
 
     })
+    }
 })

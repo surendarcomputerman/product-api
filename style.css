@@ -8,9 +8,11 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 50px;
+   
     
 }
 
@@ -49,6 +51,7 @@ body {
     font-weight: bold;
     font-size: 20px;
     margin: 10px 0;
+    text-align: center;
 }
 
 .des {
@@ -75,3 +78,44 @@ body {
     font-weight: bold;
     margin: 10px 0 0 0;
 }
+
+header{
+    background-color: grey;
+    height: 10vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color:bisque;
+    font-weight: 900;
+    font-size: 20px;
+   
+} 
+
+.unorder{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+   
+    
+}
+
+.navigator{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+#search-box{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+   
+}
+
+.submit-btn{
+    background-color: blue;
+    color: white;
+    height: 25px;
+    width: 100px;
+    border-radius: 20px;
+}
+
